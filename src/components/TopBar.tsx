@@ -21,7 +21,7 @@ export default function TopBar() {
         </div>
         <div className="leading-tight">
           <div className="text-[13px] font-semibold tracking-wide text-slate-100">
-            Infrastructure Control Plane
+            Ayush-Portfolio<span className="text-accent-cyan">@datacenter</span>
           </div>
           <div className="mono text-[10px] uppercase tracking-[0.18em] text-muted">
             {contact.handle} · region: ap-south-1
