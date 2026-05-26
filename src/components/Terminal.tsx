@@ -1,14 +1,14 @@
 import { ChevronDown, ChevronUp, TerminalSquare } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import {
-    certifications,
-    contact,
-    education,
-    experience,
-    projects,
-    skills,
-    softSkills,
-    summary,
+  certifications,
+  contact,
+  education,
+  experience,
+  projects,
+  skills,
+  softSkills,
+  summary,
 } from '../data/portfolio'
 import type { ViewKey } from './Sidebar'
 
@@ -213,16 +213,20 @@ export default function Terminal({
   }
 
   return (
-    <div className="shrink-0 border-t border-panel-border bg-ink/95">
+    <div
+      className="shrink-0 border-t-2 border-accent-blue/40 bg-ink/95 shadow-[0_-8px_24px_-12px_rgba(0,0,0,0.6)]"
+    >
+      {/* Header bar – clearly separated from the page above */}
       <button
         onClick={onToggle}
-        className="flex w-full items-center justify-between px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] text-muted hover:bg-panel-light/40"
+        className="flex w-full items-center justify-between border-b border-panel-border bg-panel-light/60 px-3 py-1.5 text-[11px] uppercase tracking-[0.18em] text-muted transition hover:bg-panel-light/80"
       >
         <span className="flex items-center gap-2">
+          <span className="flex h-1.5 w-1.5 rounded-full bg-accent-blue shadow-[0_0_6px_rgba(59,130,246,0.8)]" />
           <TerminalSquare size={13} className="text-accent-cyan" />
-          <span className="mono">terminal — ayush-ctl</span>
+          <span className="mono text-slate-200">terminal — ayush-ctl</span>
         </span>
-        <span className="flex items-center gap-2 mono">
+        <span className="flex items-center gap-1.5 mono text-accent-cyan/80">
           {open ? 'collapse' : 'expand'}
           {open ? <ChevronDown size={13} /> : <ChevronUp size={13} />}
         </span>
@@ -232,7 +236,7 @@ export default function Terminal({
         <div
           ref={scrollRef}
           onClick={() => inputRef.current?.focus()}
-          className="mono h-56 overflow-y-auto bg-ink-deep px-3 pb-2 pt-1 text-[12.5px] leading-relaxed"
+          className="mono h-[32vh] min-h-[9rem] max-h-[22rem] overflow-y-auto bg-ink-deep px-3 pb-2 pt-1.5 text-[12.5px] leading-relaxed sm:h-[36vh] md:h-[38vh]"
         >
           {lines.map((l, i) => (
             <div

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import MobileNav from './components/MobileNav'
 import Sidebar, { type ViewKey } from './components/Sidebar'
 import StatusBar from './components/StatusBar'
 import Terminal from './components/Terminal'
@@ -12,6 +13,7 @@ import SystemConfigView from './views/SystemConfigView'
 export default function App() {
   const [view, setView] = useState<ViewKey>('overview')
   const [terminalOpen, setTerminalOpen] = useState(true)
+  const [mobileNavOpen, setMobileNavOpen] = useState(false)
 
   const renderView = () => {
     switch (view) {
@@ -32,12 +34,12 @@ export default function App() {
 
   return (
     <div className="flex h-full w-full flex-col bg-ink-deep text-slate-200">
-      <TopBar />
+      <TopBar onMenuClick={() => setMobileNavOpen(true)} />
       <div className="flex min-h-0 flex-1">
         <Sidebar active={view} onChange={setView} />
         <main className="relative flex min-w-0 flex-1 flex-col bg-grid">
           <div
-            className="min-h-0 flex-1 overflow-y-scroll p-4 md:p-6"
+            className="min-h-0 flex-1 overflow-y-scroll p-3 md:p-6"
             style={{ scrollbarGutter: 'stable' }}
           >
             {renderView()}
@@ -50,6 +52,14 @@ export default function App() {
         </main>
       </div>
       <StatusBar view={view} />
+
+      {/* Mobile navigation drawer */}
+      <MobileNav
+        open={mobileNavOpen}
+        active={view}
+        onChange={setView}
+        onClose={() => setMobileNavOpen(false)}
+      />
     </div>
   )
 }

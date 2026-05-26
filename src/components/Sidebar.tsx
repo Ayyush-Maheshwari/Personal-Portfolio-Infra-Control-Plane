@@ -17,7 +17,7 @@ import {
 
 export type ViewKey = 'overview' | 'services' | 'deployments' | 'containers' | 'system'
 
-interface NavItem {
+export interface NavItem {
   key: ViewKey
   label: string
   icon: LucideIcon
@@ -25,13 +25,23 @@ interface NavItem {
   resumeRef: string
 }
 
-const NAV: NavItem[] = [
+export const NAV: NavItem[] = [
   { key: 'overview', label: 'Overview', icon: Activity, resumeRef: 'Professional Summary' },
   { key: 'services', label: 'Services', icon: Layers, count: 0, resumeRef: 'Skills' },
   { key: 'deployments', label: 'Deployments', icon: GitBranch, count: 0, resumeRef: 'Work Experience' },
   { key: 'containers', label: 'Containers', icon: Box, count: 0, resumeRef: 'Projects' },
   { key: 'system', label: 'System Config', icon: HardDrive, count: 0, resumeRef: 'Education + Certifications' },
 ]
+
+export function useNavCounts(): Record<ViewKey, number> {
+  return {
+    overview: 1,
+    services: skills.length,
+    deployments: experience.length,
+    containers: projects.length,
+    system: certifications.length + 2,
+  }
+}
 
 export default function Sidebar({
   active,
