@@ -43,7 +43,7 @@ function HeaderStrip() {
   return (
     <div className="panel flex flex-col gap-2 p-4 md:flex-row md:items-center md:justify-between">
       <div>
-        <div className="mono text-[11px] uppercase tracking-[0.18em] text-accent-cyan">
+        <div className="mono text-[11px] uppercase tracking-[0.18em] text-emerald-300">
           // resume · experience
         </div>
         <h2 className="text-lg font-semibold text-slate-50">Deployments</h2>

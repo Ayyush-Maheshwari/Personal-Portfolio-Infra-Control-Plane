@@ -8,7 +8,7 @@ export default function ContainersView() {
     <div className="space-y-4">
       <div className="panel flex flex-col gap-2 p-4 md:flex-row md:items-center md:justify-between">
         <div>
-          <div className="mono text-[11px] uppercase tracking-[0.18em] text-accent-cyan">
+          <div className="mono text-[11px] uppercase tracking-[0.18em] text-emerald-300">
             // resume · projects
           </div>
           <h2 className="text-lg font-semibold text-slate-50">Containers</h2>

@@ -1,18 +1,18 @@
 import {
-    Activity,
-    Box,
-    Cpu,
-    GitBranch,
-    HardDrive,
-    Layers,
-    type LucideIcon,
+  Activity,
+  Box,
+  Cpu,
+  GitBranch,
+  HardDrive,
+  Layers,
+  type LucideIcon,
 } from 'lucide-react'
 import {
-    certifications,
-    contact,
-    experience,
-    projects,
-    skills,
+  certifications,
+  contact,
+  experience,
+  projects,
+  skills,
 } from '../data/portfolio'
 
 export type ViewKey = 'overview' | 'services' | 'deployments' | 'containers' | 'system'
@@ -28,7 +28,7 @@ interface NavItem {
 const NAV: NavItem[] = [
   { key: 'overview', label: 'Overview', icon: Activity, resumeRef: 'Professional Summary' },
   { key: 'services', label: 'Services', icon: Layers, count: 0, resumeRef: 'Skills' },
-  { key: 'deployments', label: 'Deployments', icon: GitBranch, count: 0, resumeRef: 'Experience' },
+  { key: 'deployments', label: 'Deployments', icon: GitBranch, count: 0, resumeRef: 'Work Experience' },
   { key: 'containers', label: 'Containers', icon: Box, count: 0, resumeRef: 'Projects' },
   { key: 'system', label: 'System Config', icon: HardDrive, count: 0, resumeRef: 'Education + Certifications' },
 ]
@@ -72,7 +72,7 @@ export default function Sidebar({
         <div className="mono px-2 pb-2 text-[10px] uppercase tracking-[0.18em] text-muted">
           Control Plane
         </div>
-        <ul className="space-y-1">
+        <ul className="space-y-1.5">
           {NAV.map((item) => {
             const Icon = item.icon
             const isActive = item.key === active
@@ -80,24 +80,48 @@ export default function Sidebar({
               <li key={item.key}>
                 <button
                   onClick={() => onChange(item.key)}
-                  className={`group flex w-full items-center justify-between rounded-md px-2.5 py-2 text-left transition ${
+                  className={`group flex w-full flex-col rounded-md px-2.5 py-2 text-left transition ${
                     isActive
-                      ? 'bg-accent-blue/15 text-slate-50 ring-1 ring-accent-blue/30'
-                      : 'text-slate-300 hover:bg-panel hover:text-slate-100'
+                      ? 'bg-accent-blue/15 ring-1 ring-accent-blue/30'
+                      : 'hover:bg-panel'
                   }`}
                 >
-                  <span className="flex items-center gap-2.5">
-                    <Icon
-                      size={15}
-                      className={isActive ? 'text-accent-blue' : 'text-muted group-hover:text-slate-200'}
-                    />
-                    <span className="text-[13px] font-medium">{item.label}</span>
+                  <span className="flex w-full items-center justify-between">
+                    <span className="flex items-center gap-2.5">
+                      <Icon
+                        size={15}
+                        className={
+                          isActive
+                            ? 'text-accent-blue'
+                            : 'text-muted group-hover:text-slate-200'
+                        }
+                      />
+                      <span
+                        className={`text-[13px] font-medium ${
+                          isActive ? 'text-slate-50' : 'text-slate-300 group-hover:text-slate-100'
+                        }`}
+                      >
+                        {item.label}
+                      </span>
+                    </span>
+                    <span
+                      className={`mono text-[10px] ${
+                        isActive ? 'text-accent-cyan' : 'text-muted'
+                      }`}
+                    >
+                      {counts[item.key]}
+                    </span>
                   </span>
-                  <span className="mono text-[10px] text-muted">{counts[item.key]}</span>
+                  <span
+                    className={`mono mt-0.5 pl-[1.55rem] text-[10px] transition-colors ${
+                      isActive
+                        ? 'text-cyan-200'
+                        : 'text-cyan-400/70 group-hover:text-cyan-200'
+                    }`}
+                  >
+                    {item.resumeRef}
+                  </span>
                 </button>
-                <div className="mono pl-9 text-[10px] text-muted/60">
-                  {item.resumeRef}
-                </div>
               </li>
             )
           })}

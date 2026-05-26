@@ -1,12 +1,12 @@
 import {
-    Cloud,
-    Code2,
-    Database,
-    Network,
-    Settings2,
-    Sparkles,
-    Wrench,
-    type LucideIcon,
+  Cloud,
+  Code2,
+  Database,
+  Network,
+  Settings2,
+  Sparkles,
+  Wrench,
+  type LucideIcon,
 } from 'lucide-react';
 import Panel from '../components/Panel';
 import { skills, softSkills, type Skill } from '../data/portfolio';
@@ -116,7 +116,7 @@ function HeaderStrip() {
   return (
     <div className="panel flex flex-col gap-2 p-4 md:flex-row md:items-center md:justify-between">
       <div>
-        <div className="mono text-[11px] uppercase tracking-[0.18em] text-accent-cyan">
+        <div className="mono text-[11px] uppercase tracking-[0.18em] text-emerald-300">
           // resume · skills
         </div>
         <h2 className="text-lg font-semibold text-slate-50">Services</h2>

@@ -117,7 +117,7 @@ export const experience: Experience[] = [
     duration: 'May 2025 – Feb 2026',
     start: 'May 2025',
     end: 'Feb 2026',
-    status: 'running',
+    status: 'stopped',
     stack: ['Jenkins', 'Ansible', 'Terraform', 'Azure', 'Linux', 'Windows Server'],
     achievements: [
       'Worked with CI/CD pipelines using Jenkins, Ansible, and Terraform to deploy Windows and Linux workloads across hybrid-cloud environments and standardized infrastructure through IaC modules for networking and storage, reducing manual deployment time by 70%.',

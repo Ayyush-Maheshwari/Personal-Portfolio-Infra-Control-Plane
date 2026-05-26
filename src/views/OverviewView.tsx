@@ -1,25 +1,25 @@
 import {
-    Activity,
-    ArrowRight,
-    Box,
-    CheckCircle2,
-    Cpu,
-    GitBranch,
-    HardDrive,
-    Layers,
-    Shield,
+  Activity,
+  ArrowRight,
+  Box,
+  CheckCircle2,
+  Cpu,
+  GitBranch,
+  HardDrive,
+  Layers,
+  Shield,
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import MetricChart from '../components/MetricChart'
 import Panel from '../components/Panel'
 import type { ViewKey } from '../components/Sidebar'
 import {
-    certifications,
-    contact,
-    experience,
-    projects,
-    skills,
-    summary,
+  certifications,
+  contact,
+  experience,
+  projects,
+  skills,
+  summary,
 } from '../data/portfolio'
 
 const RUNNING = experience.filter((e) => e.status === 'running').length
@@ -56,7 +56,7 @@ export default function OverviewView({ onNavigate }: { onNavigate: (v: ViewKey) 
       {/* Header strip */}
       <div className="panel glow-border flex flex-col gap-4 p-4 md:flex-row md:items-center md:justify-between">
         <div className="space-y-1">
-          <div className="mono text-[11px] uppercase tracking-[0.18em] text-accent-cyan">
+          <div className="mono text-[11px] uppercase tracking-[0.18em] text-emerald-300">
             // professional summary
           </div>
           <h1 className="text-xl font-semibold text-slate-50">
