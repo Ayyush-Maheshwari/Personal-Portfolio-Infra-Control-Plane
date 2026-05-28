@@ -8,25 +8,29 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       colors: {
+        // Darker panels for stronger contrast against the foreground content
         panel: {
-          DEFAULT: '#0f1623',
-          light: '#141d2e',
-          border: '#1f2a3d',
+          DEFAULT: '#0b1220',
+          light: '#111a2c',
+          border: '#2a3a55', // brighter border so cards visually "pop"
         },
+        // Even deeper page background — true near-black
         ink: {
-          DEFAULT: '#0a0f1a',
-          deep: '#070b14',
+          DEFAULT: '#050913',
+          deep: '#02050c',
         },
+        // Slightly brighter, more saturated accents
         accent: {
-          blue: '#3b82f6',
-          cyan: '#06b6d4',
-          green: '#10b981',
-          amber: '#f59e0b',
-          red: '#ef4444',
+          blue: '#60a5fa',
+          cyan: '#22d3ee',
+          green: '#34d399',
+          amber: '#fbbf24',
+          red: '#f87171',
         },
+        // Lighter muted text → far better readability on dim or color-shifted screens
         muted: {
-          DEFAULT: '#94a3b8',
-          dark: '#64748b',
+          DEFAULT: '#c0cad9',
+          dark: '#8a99b3',
         },
       },
       animation: {
